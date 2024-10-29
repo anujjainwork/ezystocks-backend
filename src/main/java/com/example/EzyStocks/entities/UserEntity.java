@@ -2,12 +2,17 @@ package com.example.EzyStocks.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import java.math.BigDecimal;
+import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 @Data
-public class UserEntity{
+public class UserEntity implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,4 +35,9 @@ public class UserEntity{
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<WatchlistEntity> watchlist;
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of();
+    }
 }
