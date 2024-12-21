@@ -1,4 +1,4 @@
-# EzyRide Backend
+# EzyStocks Backend
 
 The EzyStocks Backend is a Spring Boot application with a PostgreSQL database that handles stocks buying, selling and portfolio management. This repository powers the mobile application built using Flutter, providing seamless communication and real-time updates between the app and the backend.
 
